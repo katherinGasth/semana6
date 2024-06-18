@@ -1,0 +1,50 @@
+
+
+<ion-content >
+  
+  <ion-item-divider id="div1">
+    <ion-toolbar>
+      <ion-title size="large">Registro</ion-title>
+      <h1>
+        Registrate y obten beneficios:
+      </h1>
+    </ion-toolbar>
+  </ion-item-divider>
+
+  <ion-item-divider>
+    <form [formGroup]="formularioDatosUsusario" (ngSubmit)="crearUsuario()">
+      <ion-list>
+        <ion-list>
+          <ion-item>
+            <ion-input class="" label="Nombre" placeholder="Ingrese nombre" id="nombre" 
+            [ngClass]="{'animate__animated animate__backInLeft animate__delay-1s': isReset}" formControlName="nombre"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input class="" id="b" label="Apellido" placeholder="Ingrese Apellido" 
+            id="apellido" [ngClass]="{'animate__animated animate__backInLeft animate__delay-1s': isReset}" formControlName="apellido"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input label="Fecha Nacimiento"  type="date" id="fechaNacimiento" formControlName="fechaNacimiento"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input label="Contraseña" type="password" id="contrasenna" formControlName="contrasenna"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input label="Ingresar rut"  id="rut" formControlName="rut"></ion-input>
+          </ion-item>
+
+        </ion-list>
+      </ion-list>
+      <ion-button class="btn btn-primary" (click)="irFoto()">Tomar Foto</ion-button>
+      <ion-button class="btn btn-primary" type="reset" (click)="reset()">limpiar</ion-button>
+      <ion-button class="btn btn-primary" type="submit" (click)="crearUsuario()">Registrarse</ion-button>
+    </form>
+  </ion-item-divider>
+  <br/>
+  <br/>
+  <ion-button class="btn btn-primary" (click)="irAPaginaErronea()">Prueba 404</ion-button>
+</ion-content>
+

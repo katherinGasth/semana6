@@ -1,0 +1,80 @@
+
+
+<ion-content [fullscreen]="true">
+  <ion-item-divider id="div1">
+    <ion-toolbar>
+      <ion-title size="large">Mis Datos:</ion-title>
+      <ion-buttons slot="primary">
+        <ion-button (click)="logout()" color="danger" fill="outline">
+          Salir
+          <ion-icon slot="end" name="log-out-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-item-divider>
+  
+  <ion-item-divider>
+    
+      <ion-grid>
+        <ion-row>
+          <ion-col>nombre:</ion-col>
+          <ion-col>{{usuario.nombre}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Apellido:</ion-col>
+          <ion-col>{{usuario.apellido}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Fecha de nacimiento:</ion-col>
+          <ion-col>{{usuario.fechaNacimiento}}</ion-col>
+        </ion-row>
+            
+
+        <ion-row *ngFor="let certificado of certificados">
+          <ion-row>
+            <ion-col>Nombre certificado:</ion-col>
+            <ion-col>{{certificado.nombreCertificado}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>fecha obtencion certificado:</ion-col>
+            <ion-col>{{certificado.fechaObtencion}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>vencimiento certificado:</ion-col>
+            <ion-col>{{certificado.vencimiento}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>fecha vencimiento certificado:</ion-col>
+            <ion-col>{{certificado.fechaVencimiento}}</ion-col>
+          </ion-row>
+        </ion-row>
+        
+        <ion-row *ngFor="let experiencia of experiencias">
+          <ion-row>
+            <ion-col>nombre empresa experiencia:</ion-col>
+            <ion-col>{{experiencia.nombreEmpresa}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>Año inicio:</ion-col>
+            <ion-col>{{experiencia.annoInicio}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>trabaja actualmente:</ion-col>
+            <ion-col>{{experiencia.trabajaActualmente}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>fecha termino:</ion-col>
+            <ion-col>{{experiencia.annoTermino}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>Cargo:</ion-col>
+            <ion-col>{{experiencia.cargo}}</ion-col>
+          </ion-row>
+        </ion-row>
+        
+      </ion-grid>
+  </ion-item-divider>
+  <br>
+  <img src="{{usuario.fotoPerfil}}">
+
+</ion-content>
