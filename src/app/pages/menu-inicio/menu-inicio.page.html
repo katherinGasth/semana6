@@ -1,18 +1,35 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>menuInicio</ion-title>
+
+
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false" (click)="irMenuPrincipal()" id="title"></ion-menu-button>
+    </ion-buttons>
+    <ion-title id="title">Skeleton</ion-title>   
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">menuInicio</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content id="contenido">
+  <ion-title id="title2">Bienvenida: {{usuario}}</ion-title>
+    <br>
+    <p id="contenido">Somos una empresa líder en paquetes turisticos. PARA RESERVAR:
+      ¡Comunícate con nosotros vía correo, Instagram, Facebook, WhatsApp o teléfono y te indicaremos los pasos a seguir! También puedes reservar en nuestra página web www.geoterraviajes.cl y seguir los pasos señalados.
+      
+      RESERVA:
+      Aprovecha y reserva sólo con $500.000 por persona. Este monto se descuenta del valor total del viaje y no es reembolsable en ningún caso.
+      
+      <ion-img src="https://www.shutterstock.com/shutterstock/photos/2183226477/display_1500/stock-photo-vacation-couple-on-the-beach-near-swimming-pool-luxury-travel-2183226477.jpg"></ion-img>
 
-  <ion-button (click)="irMenuPrincipal()"> Menu Principal</ion-button>
-  <ion-button (click)="irDatos()">Mis Datos</ion-button>
+      <br>
+
+      <p id="contenido">Reservas a +569 998897577</p>
+   
 
 
 </ion-content>
+
+
+
+<ion-toolbar color="light" >
+  <ion-title id="a">Realizado por Katherin G.</ion-title>
+</ion-toolbar>

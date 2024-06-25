@@ -14,6 +14,7 @@ export class LoginPage implements OnInit {
 
   formularioLogin: FormGroup;
   user: string = '';
+  nombreUsuraio: string = '';
 
   constructor( private form: FormBuilder, private route: Router, private alertController: AlertController, private db: DbService) { 
     this.formularioLogin = this.form.group({
@@ -37,7 +38,10 @@ export class LoginPage implements OnInit {
 
             if(this.formularioLogin.value["password"] == usuario.contrasenna){
               this.user = usuario.rut;
+              this.nombreUsuraio = usuario.nombre;
+              localStorage.setItem('nombre', this.nombreUsuraio);
               localStorage.setItem('rut', this.user);
+              localStorage.setItem('fotoPerfil', usuario.fotoPerfil);
               this.route.navigate(['menu-inicio']);
             }else {
               this.presentAlert('Contraseña incorrecta, intentelo de nuevo');

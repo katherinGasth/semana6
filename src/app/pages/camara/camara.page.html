@@ -1,6 +1,9 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Avatar</ion-title>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start" style="margin-left: 20px;">
+      <ion-icon (click)="volver()" name="arrow-back"></ion-icon>
+    </ion-buttons>
+    <ion-title id="title">Avatar</ion-title>    
   </ion-toolbar>
 </ion-header>
 
@@ -28,5 +31,9 @@
     <img *ngIf="imageSource" src="{{imageSource}}" alt="image" style="width: 100%; max-width: 250px;">
   </div>
 
-  <ion-button (click)="siguiente()" [disabled]="!anySelected()">Siguiente</ion-button>
+  <ion-fab  vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="siguiente()" [disabled]="!anySelected()">
+      <ion-icon name="arrow-forward"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

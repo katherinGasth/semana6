@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class MenuPrincipalPage implements OnInit {
 
+  fotoPerfil = localStorage.getItem('fotoPerfil');
+
   constructor(private route: Router) { }
 
   ngOnInit() {
@@ -26,11 +28,23 @@ export class MenuPrincipalPage implements OnInit {
   }
 
   goHome(){
-    this.route.navigate(['presentacion']);
+    this.route.navigate(['menu-inicio']);
   }
 
   goOut(){
+    localStorage.clear();
     this.route.navigate(['login']);
+  }
+
+  goMap(){
+    this.route.navigate(['mapa']);
+  }
+
+  goError(){
+    this.route.navigate(['error']);
+  }
+  goMisDatos(){
+    this.route.navigate(['menu'])
   }
 
 

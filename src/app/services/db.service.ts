@@ -37,7 +37,7 @@ export class DbService {
 
   createTables() : void {
 
-    /*
+  
     this.db.executeSql(
       `DROP TABLE EXPERIENCIA`).then(() => console.log("Tabla usuario borrada"));
 
@@ -46,7 +46,7 @@ export class DbService {
 
     this.db.executeSql(
       `DROP TABLE USUA`).then(() => console.log("Tabla usuario borrada"));
-    */
+
    
     this.db.executeSql(
       `
@@ -136,6 +136,14 @@ export class DbService {
       "SELECT * FROM CERTIFICADO WHERE userRut = ?",
       [rut]
     );
+  }
+
+  cambiarContrasenna(nuevacontrasenna: string, rut: string){
+    return this.db.executeSql(
+      "UPDATE USUA SET contrasenna = ? WHERE rut = ?",
+      [nuevacontrasenna, rut]
+    );
+
   }
   
 

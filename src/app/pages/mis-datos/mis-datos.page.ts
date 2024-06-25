@@ -68,11 +68,5 @@ export class MisDatosPage implements OnInit, OnDestroy {
     });
   }
 
-  logout(){ 
-    this.route.navigate(['login']);
-  }
-
-
-
  
 }

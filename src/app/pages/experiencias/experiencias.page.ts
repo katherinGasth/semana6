@@ -22,7 +22,7 @@ export class ExperienciasPage{
     this.formularioExperiencias = this.form.group({
       nombreEmpresa: '',
       annoInicio: '',
-      trabajaActualmente: 'si',
+      trabajaActual: 'si',
       annoTermino: '',
       cargo: '',
     });
@@ -36,7 +36,7 @@ export class ExperienciasPage{
     this.db.crearExperiencia(
       this.formularioExperiencias.value["nombreEmpresa"],
       this.formularioExperiencias.value["annoInicio"],
-      this.formularioExperiencias.value["trabajaActualmente"],
+      this.formularioExperiencias.value["trabajaActual"],
       this.formularioExperiencias.value["annoTermino"],
       this.formularioExperiencias.value["cargo"],
       this.userrut

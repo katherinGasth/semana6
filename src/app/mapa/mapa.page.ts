@@ -4,12 +4,23 @@ import { Geolocation } from '@capacitor/geolocation';
 @Component({
   template: `
     <ion-content>
-    <div id="map"></div>
-    <button (click)="createMap()">Create Map</button>
-    <button routerLink="/menu">Ir a menu</button>
-    {{mensaje}}
-    <br/><br/><br/>
-    -----
+    <div id="map" *ngIf="mostrarMapa"></div>
+    
+    <ion-card *ngIf="errorAlCargar">
+      <ion-card-header>
+        <ion-card-title>No podemos mostrar el mapa</ion-card-title>
+        <ion-card-subtitle>Error de conexión</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        Actualmente no posees conexión a internet, revisa tu conexión e intentalo nuevamente.
+      </ion-card-content>
+    </ion-card>
+    
+    <br>
+    <div style="text-align: center;">
+      <ion-button routerLink="/menu-principal" class="btn btn-primary">Ir a menu</ion-button>
+    </div>
     </ion-content>
   `,
   styles: [
@@ -29,12 +40,11 @@ export class MapaPage implements AfterViewInit {
   @ViewChild('map')
   mapRef?: ElementRef<HTMLElement>;
 
-  mensaje: String = "";
+  mostrarMapa: boolean = true;
+  errorAlCargar: boolean = false;
 
   async createMap() {
     try {
-
-      this.mensaje = "Creando mapa ..."
       
       //@ts-ignore
       const { Map } = await google.maps.importLibrary("maps") as google.maps.MapsLibrary;
@@ -70,7 +80,8 @@ export class MapaPage implements AfterViewInit {
 
     }
     catch(ex) {
-      this.mensaje = "Error:" + ex;
+      this.errorAlCargar = true;
+      this.mostrarMapa = false;
     }
   }
 

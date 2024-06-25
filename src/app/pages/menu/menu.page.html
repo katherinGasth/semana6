@@ -1,21 +1,26 @@
 <ion-header>
-  <ion-title>Skeleton2</ion-title>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false" (click)="goMenu()" id="title"></ion-menu-button>
+    </ion-buttons>
+    <ion-title id="title">Skeleton</ion-title>    
+  </ion-toolbar>
 </ion-header>
 
 
 <ion-tabs>
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="home">
-      <ion-icon name="home"></ion-icon>
-      home
+      <ion-icon name="lock-closed"></ion-icon>
+      Contraseña
     </ion-tab-button>
     <ion-tab-button tab="certificados">
       <ion-icon name="bookmarks"></ion-icon>
-      certificados
+      Certificados
     </ion-tab-button>
     <ion-tab-button tab="experiencias">
       <ion-icon name="briefcase"></ion-icon>
-      experiencias
+      Experiencias
     </ion-tab-button>
     <ion-tab-button tab="mis-datos">
       <ion-icon name="folder"></ion-icon>

@@ -10,15 +10,14 @@ ion-title{
     text-align: center;
     height: 90px;
     padding: 0%;
+    font-size: 40px;
+
+    margin-top: 45px;
 
 }
 
-h1{
-    margin-top: 0%;
-    color: #0fa845;;
+p{
     font-family: cursive;
-    font-size: 15px;
-    text-align: center;
 }
 
 h2 {
@@ -32,3 +31,26 @@ form{
     margin-right: 10%;
 }
 
+h1 {
+    animation-duration: 3s;
+    animation-name: slidein;
+    margin-top: 0%;
+    color: #0fa845;;
+    font-family: cursive;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+  

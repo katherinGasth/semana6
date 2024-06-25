@@ -3,7 +3,7 @@
 <ion-header>
     <ion-toolbar color="success">
       <ion-buttons slot="start">
-        <ion-menu-button auto-hide="false" id="title"></ion-menu-button>
+        <ion-menu-button auto-hide="false" id="title" (click)="goHome()"></ion-menu-button>
       </ion-buttons>
       <ion-title id="title">Skeleton</ion-title>    
     </ion-toolbar>
@@ -43,6 +43,26 @@
   </ion-item>
 </ion-list>
 <ion-list>
+  <ion-item (click)="goMap()">
+    <ion-avatar slot="start" >
+      <img src="https://img.freepik.com/vector-premium/icono-punto-alfiler-simbolo-puntero-ubicacion-mapa-rojo-aislado-sobre-fondo-blanco_120819-234.jpg"/>
+    </ion-avatar>
+    <ion-label>
+      <h1 id="colorlist">Ubicación</h1>
+    </ion-label>
+  </ion-item>
+</ion-list>
+<ion-list>
+  <ion-item (click)="goMisDatos()">
+    <ion-avatar slot="start" >
+      <img src="{{fotoPerfil}}"/>
+    </ion-avatar>
+    <ion-label>
+      <h1 id="colorlist">Mis datos</h1>
+    </ion-label>
+  </ion-item>
+</ion-list>
+<ion-list>
   <ion-item (click)="goHome()">
     <ion-label>
       <h1 id="colorlist">Home</h1>
@@ -63,5 +83,5 @@
 
 
 <ion-toolbar color="light" >
-<ion-title id="a">realizado por Katherin G.</ion-title>
+<ion-title id="a">Realizado por Katherin G.</ion-title>
 </ion-toolbar>

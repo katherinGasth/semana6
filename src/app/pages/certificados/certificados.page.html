@@ -4,7 +4,7 @@
 
   <ion-item-divider id="div1">
     <ion-toolbar>
-      <ion-title size="large">Certificados</ion-title>
+      <ion-title size="large">CERTIFICADO</ion-title>
     </ion-toolbar>
   </ion-item-divider>
 
@@ -12,19 +12,19 @@
     <form [formGroup]="formularioCertificados" (ngSubmit)="enviar()">
       <ion-list>
         <ion-item>
-          <ion-input class="" label="nombreCertificado" placeholder="ingrese nombre del certificado" id="nombreCertificado"
+          <ion-input class="" label="Certificado:" placeholder="ingrese certificado" id="nombreCertificado"
           formControlName="nombreCertificado">
           </ion-input>
         </ion-item>
         <ion-item>
-          <ion-input class="" label="fecha Obtención" placeholder="Ingrese fecha de obtención" id="fechaObtencion"
+          <ion-input class="" label="Fecha Obtención:" placeholder="Ingrese fecha" id="fechaObtencion"
           type="date" formControlName="fechaObtencion">              
           </ion-input>
         </ion-item>
         <ion-item>
           <ion-segment value="vencimiento" formControlName="certificadoVence">
             <ion-segment-button value="si" >
-              <ion-label>vencimiento</ion-label>
+              <ion-label>Vencimiento</ion-label>
             </ion-segment-button>
             <ion-segment-button value="no">
               <ion-label>No vencimiento</ion-label>
@@ -32,7 +32,7 @@
           </ion-segment>
         </ion-item>
         <ion-item *ngIf="formularioCertificados.value['certificadoVence']==='si'">
-          <ion-input class="" label="fechaVencimiento" placeholder="Ingrese fecha vencimiento" id="fechaVencimiento"
+          <ion-input class="" label="Fecha vencimiento:" placeholder="Ingrese fecha" id="fechaVencimiento"
           type="date" formControlName="fechaVencimiento">
             
           </ion-input>

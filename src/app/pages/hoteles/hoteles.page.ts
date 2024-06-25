@@ -14,7 +14,7 @@ export class HotelesPage implements OnInit {
   }
 
   goMenu(){
-    this.route.navigate(['menu']);
+    this.route.navigate(['menu-principal']);
   }
 
 }

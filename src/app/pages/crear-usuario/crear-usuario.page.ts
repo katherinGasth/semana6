@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { DbService } from './../../services/db.service';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { Validators } from '@angular/forms';
 
 
 @Component({
@@ -16,15 +16,15 @@ export class CrearUsuarioPage {
   isReset: boolean = false;
   fotoPerfil: any='';
 
-  constructor(private db: DbService, private http: HttpClient, private form: FormBuilder, private router: Router) {
+  constructor(private db: DbService, private form: FormBuilder, private router: Router) {
         
     this.fotoPerfil = localStorage.getItem('fotoPerfil');
     this.formularioDatosUsusario = this.form.group({
-      nombre: '',
-      apellido: '',
-      fechaNacimiento: '',
-      contrasenna: '',
-      rut: '',
+      nombre: ['', Validators.required],
+      apellido: ['', Validators.required],
+      fechaNacimiento: ['', Validators.required],
+      contrasenna: ['', Validators.required],
+      rut: ['', Validators.required],
     });
    }
 
@@ -45,22 +45,11 @@ export class CrearUsuarioPage {
       this.formularioDatosUsusario.value["fechaNacimiento"],
       this.fotoPerfil
     );
-    this.router.navigate(['menu']);
+    this.router.navigate(['login']);
   }
 
-  reset(){
-    this.isReset = true;
-    this.obtenerImagenRickyMorty();
+  hasError(controlName: string, errorType: string){
+    return this.formularioDatosUsusario.get(controlName)?.hasError(errorType) && this.formularioDatosUsusario.get(controlName)?.touched
   }
-
-  irFoto(){
-    this.router.navigate(['camara']);
-  }
-
-  obtenerImagenRickyMorty(){
-    
-
-  }
-
-
+  
 }

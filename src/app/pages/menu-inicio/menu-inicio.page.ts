@@ -8,9 +8,14 @@ import { Router } from '@angular/router';
 })
 export class MenuInicioPage implements OnInit {
 
+  usuario: any = '';
+
   constructor(private route: Router) { }
 
   ngOnInit() {
+
+    this.usuario = localStorage.getItem('nombre');
+
   }
 
   irMenuPrincipal(){

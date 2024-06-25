@@ -4,7 +4,7 @@
 
   <ion-item-divider id="div1">
     <ion-toolbar>
-      <ion-title size="large">Experiencias</ion-title>
+      <ion-title size="large">EXPERIENCIAS</ion-title>
     </ion-toolbar>
   </ion-item-divider>
 
@@ -12,17 +12,17 @@
     <form [formGroup]="formularioExperiencias" (ngSubmit)="enviar()">
       <ion-list>
         <ion-item>
-          <ion-input class="" label="nombreEmpresa" placeholder="ingrese nombre de la empresa" id="nombreEmpresa"
+          <ion-input class="" label="Empresa:" placeholder="Ingrese nombre" id="nombreEmpresa"
           formControlName="nombreEmpresa">
           </ion-input>
         </ion-item>
         <ion-item>
-          <ion-input class="" label="Año Inicio" placeholder="Ingrese fecha de inicio" id="annoInicio"
+          <ion-input class="" label="Año Inicio:" placeholder="Ingrese fecha" id="annoInicio"
           type="date" formControlName="annoInicio">              
           </ion-input>
         </ion-item>
         <ion-item>
-          <ion-segment value="vencimiento" formControlName="trabajaActualmente" >
+          <ion-segment value="vencimiento" formControlName="trabajaActual" >
             <ion-segment-button value="si" >
               <ion-label>Trabaja</ion-label>
             </ion-segment-button>
@@ -31,20 +31,22 @@
             </ion-segment-button>
           </ion-segment>
         </ion-item>
-        <ion-item *ngIf="formularioExperiencias.value['trabajaActualmente']==='no'">
-          <ion-input class="" label="Año Termino" placeholder="Ingrese fecha termino laboral" id="annoTermino"
+        <ion-item *ngIf="formularioExperiencias.value['trabajaActual']==='no'">
+          <ion-input class="" label="Año Termino:" placeholder="Ingrese fecha" id="annoTermino"
           type="date" formControlName="annoTermino"
           >
           </ion-input>
         </ion-item>
         <ion-item>
-          <ion-input class="" label="cargo" placeholder="ingrese cargo en la empresa" id="cargo"
+          <ion-input class="" label="Cargo:" placeholder="ingrese cargo" id="cargo"
           formControlName="cargo">
           </ion-input>
         </ion-item>
       </ion-list>
-      <ion-button class="btn btn-primary" type="reset" >limpiar</ion-button>
-    <ion-button class="btn btn-primary" type="submit" >Enviar</ion-button>
+      <div style="text-align: center;">
+        <ion-button class="btn btn-primary" type="reset" >LIMPIAR</ion-button>
+        <ion-button class="btn btn-primary" type="submit" >ENVIAR</ion-button>
+      </div>
 
 
     </form>

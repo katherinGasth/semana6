@@ -3,13 +3,9 @@
 <ion-content [fullscreen]="true">
   <ion-item-divider id="div1">
     <ion-toolbar>
-      <ion-title size="large">Mis Datos:</ion-title>
-      <ion-buttons slot="primary">
-        <ion-button (click)="logout()" color="danger" fill="outline">
-          Salir
-          <ion-icon slot="end" name="log-out-outline"></ion-icon>
-        </ion-button>
-      </ion-buttons>
+      <ion-title size="large">MIS DATOS:</ion-title>
+      <img src="{{usuario.fotoPerfil}}" slot="end">
+      
     </ion-toolbar>
   </ion-item-divider>
   
@@ -28,9 +24,10 @@
           <ion-col>Fecha de nacimiento:</ion-col>
           <ion-col>{{usuario.fechaNacimiento}}</ion-col>
         </ion-row>
-            
-
-        <ion-row *ngFor="let certificado of certificados">
+        <ion-row>
+          <ion-col>CERTIFICADOS:</ion-col>
+        </ion-row>
+        <div *ngFor="let certificado of certificados">
           <ion-row>
             <ion-col>Nombre certificado:</ion-col>
             <ion-col>{{certificado.nombreCertificado}}</ion-col>
@@ -39,17 +36,21 @@
             <ion-col>fecha obtencion certificado:</ion-col>
             <ion-col>{{certificado.fechaObtencion}}</ion-col>
           </ion-row>
-          <ion-row>
-            <ion-col>vencimiento certificado:</ion-col>
-            <ion-col>{{certificado.vencimiento}}</ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col>fecha vencimiento certificado:</ion-col>
-            <ion-col>{{certificado.fechaVencimiento}}</ion-col>
-          </ion-row>
+          <div *ngIf="certificado.vencimiento==='si'">
+            <ion-row>
+              <ion-col>vencimiento certificado:</ion-col>
+              <ion-col>{{certificado.vencimiento}}</ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>fecha vencimiento certificado:</ion-col>
+              <ion-col>{{certificado.fechaVencimiento}}</ion-col>
+            </ion-row>
+          </div>
+        </div>
+        <ion-row>
+          <ion-col>EXPERIENCIA LABORAL:</ion-col>
         </ion-row>
-        
-        <ion-row *ngFor="let experiencia of experiencias">
+        <div *ngFor="let experiencia of experiencias">
           <ion-row>
             <ion-col>nombre empresa experiencia:</ion-col>
             <ion-col>{{experiencia.nombreEmpresa}}</ion-col>
@@ -60,21 +61,22 @@
           </ion-row>
           <ion-row>
             <ion-col>trabaja actualmente:</ion-col>
-            <ion-col>{{experiencia.trabajaActualmente}}</ion-col>
+            <ion-col>{{experiencia.trabajaActual}}</ion-col>
           </ion-row>
-          <ion-row>
-            <ion-col>fecha termino:</ion-col>
-            <ion-col>{{experiencia.annoTermino}}</ion-col>
-          </ion-row>
+          <div *ngIf="experiencia.trabajaActual==='no'">
+            <ion-row>
+              <ion-col>fecha termino:</ion-col>
+              <ion-col>{{experiencia.annoTermino}}</ion-col>
+            </ion-row>
+          </div>
           <ion-row>
             <ion-col>Cargo:</ion-col>
             <ion-col>{{experiencia.cargo}}</ion-col>
           </ion-row>
-        </ion-row>
+        </div>
         
       </ion-grid>
   </ion-item-divider>
   <br>
-  <img src="{{usuario.fotoPerfil}}">
 
 </ion-content>

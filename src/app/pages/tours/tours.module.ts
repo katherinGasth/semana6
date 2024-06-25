@@ -13,7 +13,8 @@ import { ToursPage } from './tours.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ToursPageRoutingModule
+    ToursPageRoutingModule,
+    
   ],
   declarations: [ToursPage]
 })

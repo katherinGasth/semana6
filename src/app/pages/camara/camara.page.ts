@@ -25,6 +25,10 @@ export class CamaraPage implements OnInit {
     this.cargarImagenes();
   }
 
+  volver() {
+    this.route.navigate(['login']);
+  }
+
   cargarImagenes() {
     this.http.get('https://rickandmortyapi.com/api/character/?page=' + this.page).subscribe((response: any) => {
       this.imagenesPredefinidas = [];
